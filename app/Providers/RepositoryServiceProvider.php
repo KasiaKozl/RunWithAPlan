@@ -16,6 +16,10 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         //
         $this->app->bind(QuoteRepository::class);
+        $this->app->bind(PlanningRepository::class);
+        $this->app->bind(UserRepository::class);
+        $this->app->bind(FormRepository::class);
+        $this->app->bind(RoleRepository::class);
 
 }
 

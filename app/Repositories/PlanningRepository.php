@@ -21,7 +21,7 @@ public function deletePlanning($planningId)
     return Planning::destroy($planningId);
 }
 
-public function showPlanning()
+public function showPlannings()
 {
     return Planning::all();
 }
@@ -31,7 +31,7 @@ public function findOrFail(int $planningId): Planning
         return $this->model->findOrFail($planningId);
 }
 
-public function createPlanning(string $name)
+public function createPlanning(array $name)
 {
     return Planning::create($name);
 }
