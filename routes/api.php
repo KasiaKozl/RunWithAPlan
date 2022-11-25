@@ -2,6 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Controllers\RoleController;
+use App\Controllers\QuoteController;
+use App\Controllers\PlanningController;
+use App\Controllers\FormController;
+use App\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+  //  return $request->user();
+//});
+
+//otro ejemplo
+//Route::get('/user/{id}', function ($id) {
+  //  return new UserResource(User::findOrFail($id));
+//});
+
+Route::resource('roles', RoleController::class); 
+Route::resource('quotes', QuoteController::class); 
+Route::resource('plannings', PlanningController::class);
+Route::resource('forms', FormController::class); 
+Route::resource('users', UserController::class);  

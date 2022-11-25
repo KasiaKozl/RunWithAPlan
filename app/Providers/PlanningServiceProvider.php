@@ -2,27 +2,42 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Repositories\PlanningRepository;
+use Illuminate\Support\Collection;
 
-class PlanningServiceProvider extends ServiceProvider
+use App\Models\Planning;
+
+class PlanningServiceProvider 
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
+    private $planningRepository;
+
+    public function __construct(PlanningRepository $planningRepository)
     {
-        //
+        $this->planningRepository = $planningRepository;
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function index(): Collection
     {
-        //
+        return $this->planningRepository->showPlannings();
+    }
+
+    public function store($name): Planning
+    {
+        return $this->planningRepository->createPlanning($name);
+    }
+
+    public function show($id)
+    {
+        return $this->planningRepository->findOrFail($id);
+    }
+
+    public function update($id, $newName)
+    {
+        return $this->planningRepository->updatePlanning($id, $newName);
+    }
+
+    public function delete($id)
+    {
+        return $this->planningRepository->deletePlanning($id);
     }
 }

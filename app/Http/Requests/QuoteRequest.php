@@ -6,25 +6,30 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class QuoteRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return false;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, mixed>
-     */
     public function rules()
     {
-        return [
-            //
-        ];
+        switch (request()->getMethod()) {
+            case 'PUT':
+                return [
+                    'body'      => 'required|string|max:191',
+                    
+                ];
+            case 'POST':
+                return [
+                    'body'      => 'required|string|max:191',
+                    
+                ];
+            case 'GET':
+                return [
+                    'id'        => 'numeric|min:1',
+                    'body'      => 'required|string|max:191',
+                ];
+            case 'DELETE':
+                return [
+                    'id'        => 'numeric|min:1'
+                ];
+            default:
+                return [];
+        }
     }
 }

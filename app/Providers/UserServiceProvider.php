@@ -2,27 +2,42 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Repositories\UserRepository;
+use Illuminate\Support\Collection;
 
-class UserServiceProvider extends ServiceProvider
+use App\Models\User;
+
+class UserServiceProvider 
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
+    private $userRepository;
+
+    public function __construct(UserRepository $userRepository)
     {
-        //
+        $this->userRepository = $userRepository;
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function index(): Collection
     {
-        //
+        return $this->userRepository->showUsers();
+    }
+
+    public function store($data): User
+    {
+        return $this->userRepository->createUser($data);
+    }
+
+    public function show($id)
+    {
+        return $this->userRepository->findOrFail($id);
+    }
+
+    public function update($id, $newData)
+    {
+        return $this->userRepository->updateUser($id, $newData);
+    }
+
+    public function delete($id)
+    {
+        return $this->userRepository->deleteUser($id);
     }
 }

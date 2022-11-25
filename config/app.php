@@ -196,7 +196,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
 
-        App\Providers\QuoteServiceProvider::class,
+        //App\Providers\QuoteServiceProvider::class,
         //App\Providers\FormServiceProvider::class,
         //App\Providers\PlanningsServiceProvider::class,
         //App\Providers\RoleServiceProvider::class,

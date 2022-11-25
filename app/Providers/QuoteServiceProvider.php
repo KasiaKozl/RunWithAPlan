@@ -21,7 +21,7 @@ class QuoteServiceProvider
         return $this->quoteRepository->showQuotes();
     }
 
-    public function store(string $body): Quote
+    public function store($body): Quote
     {
         return $this->quoteRepository->createQuote($body);
     }
@@ -31,7 +31,7 @@ class QuoteServiceProvider
         return $this->quoteRepository->findOrFail($id);
     }
 
-    public function update($id, $body): Quote
+    public function update($id, $body)
     {
         return $this->quoteRepository->updateQuote($id, $body);
     }
