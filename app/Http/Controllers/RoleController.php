@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 
 class RoleController extends Controller
 {
+    private $roleService;
     public function __construct(RoleServiceProvider $roleService)
     {
         $this->roleService = $roleService;

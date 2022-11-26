@@ -10,6 +10,9 @@ use Illuminate\Http\Response;
 
 class PlanningController extends Controller
 {
+
+    private $planningService; 
+    
     public function __construct(PlanningServiceProvider $planningService)
     {
         $this->planningService = $planningService;

@@ -10,6 +10,7 @@ use Illuminate\Http\Response;
 
 class QuoteController extends Controller
 {
+    private $quoteService;
     public function __construct(QuoteServiceProvider $quoteService)
     {
         $this->quoteService = $quoteService;

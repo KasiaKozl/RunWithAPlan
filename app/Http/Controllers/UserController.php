@@ -10,6 +10,8 @@ use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
+    private $userService;
+    
     public function __construct(UserServiceProvider $userService)
     {
         $this->userService = $userService;

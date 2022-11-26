@@ -10,7 +10,9 @@ use Illuminate\Http\Response;
 
 class FormController extends Controller
 {
-    public function __construct(FormServiceProvider $formService)
+    private $formService;
+    
+    function __construct(FormServiceProvider $formService)
     {
         $this->formService = $formService;
     }
