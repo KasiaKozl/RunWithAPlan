@@ -2,11 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Controllers\RoleController;
-use App\Controllers\QuoteController;
-use App\Controllers\PlanningController;
-use App\Controllers\FormController;
-use App\Controllers\UserController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\PlanningController;
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------

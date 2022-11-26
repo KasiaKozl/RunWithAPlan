@@ -18,27 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-/*
-Route::get('/login', function() {
-    return view('login');
-});
-
-Route::get('/register', function() {
-    return view('register');
-});
-
-Route::get('/form', function() {
-    return view('form');
-});
-
-Route::get('/landing', function() {
-    return view('landing');
-});
-*/
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::post('/forms', [App\Http\Controllers\FormController::class, 'store']);
+

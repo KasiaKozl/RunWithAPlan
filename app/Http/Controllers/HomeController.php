@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        // if role id es 2 return view, if role id es 1 return otro view
         return view('home');
     }
 }
