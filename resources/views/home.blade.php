@@ -32,6 +32,7 @@
                                 </div>
                             <div class="modal-body">
                             <form method="POST" action="/" id="survey">
+                            {{ csrf_field() }}
                                 <div class="row mb-3">
                                  <label for="level" class="col-md-4 col-form-label text-md-end">I would describe my current level of fitness as</label>
 
@@ -68,7 +69,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button id="savebtn" type="submit" class="btn btn-primary submit" onclick="">Save changes</button>
+                                    <button id="savebtn" type="submit" class="btn btn-primary submit" onclick="saveForm('{{ route('forms.store')}}')">Save changes</button>
                                 </div>
                             </form>
                             </div>
@@ -87,30 +88,13 @@
 @endsection
 
 <script>
-
-$('#survey').on('submit', function(e){
-    e.preventDefault();
-
-    let level = $('#level').val();
-    let distance = $('#distance').val();
-    let time = $('#time').val();
-
-    $.ajax({
-        url: "/forms",
-        type: "POST",
-        data: {
-            "_token": "{{csrf_token()}}",
-            level:level,
-            distance:distance,
-            time:time
-        },
-        success:function(response){
-            console.log("exito");
-        },
-        error:function(response){
-            console.log("ha ido mal");
-        },
+function saveForm(route){
+    const request = $.ajax({
+        Method: 'POST',
+        url: route,
+    }).done(function(response) {
+        $(#savebtn).attr('form', response);
     });
-});
+}
 
 </script>
