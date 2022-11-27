@@ -7,6 +7,7 @@ use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\PlanningController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\TrainingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,4 @@ Route::resource('quotes', QuoteController::class);
 Route::resource('plannings', PlanningController::class);
 Route::resource('forms', FormController::class); 
 Route::resource('users', UserController::class);  
+Route::resource('trainings', TrainingController::class);  

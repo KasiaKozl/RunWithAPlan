@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Training;
+use Illuminate\Support\Facades\DB;
 
 class TrainingRepository {
 
@@ -37,7 +38,11 @@ public function createTraining(array $data)
 }
 
 public function getSpecificTraining($level, $distance, $time){
-    return Training::get($level, $distance, $time)
+    return DB::table('trainings')
+                ->where('level', '=', $level)
+                ->where('distance', '=', $distance)
+                ->where('time', '=', $time)
+                ->get();
 }
 
 }

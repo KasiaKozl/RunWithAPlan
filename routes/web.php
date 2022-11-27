@@ -21,7 +21,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('role:runner')->name('home');
+Route::get('/coachhome', [App\Http\Controllers\CoachHomeController::class, 'index'])->middleware('role:coach')->name('coachhome');
 
 Route::post('/forms', [App\Http\Controllers\FormController::class, 'store']);
+
+Route::get('/trainings', [App\Http\Controllers\TrainingController::class, 'show']);
 
