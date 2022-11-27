@@ -52,30 +52,14 @@ $resTime = mysqli_query($con, $sqlTime);
                                     <td class=" text-center">{{$training->distance}}</td>
                                     <td class=" text-center">{{$training->time}}</td>
                                     <td class=" text-center">{{$training->file_name}}</td>
-                                    <td class=" text-center"><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#pdfModal">
+                                    <td class=" text-center"><a href="example.pdf" target="_blank"><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#pdfModal">
                       Open
-                    </button></td>
+                    </button></a></td>
                                     
                                 </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                    
-                            <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="pdfModalLabel">Selected training</h1>
-                                        </div>
-                                            <div class="modal-body text-center">
-                                                <iframe src="example.pdf" height="500", width="300"></iframe>
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                    <!-- Fin Modal -->
-                    
-                    
                     </div>
                 </div>
             </div>

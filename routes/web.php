@@ -28,3 +28,5 @@ Route::post('/forms', [App\Http\Controllers\FormController::class, 'store']);
 
 Route::get('/trainings', [App\Http\Controllers\TrainingController::class, 'show']);
 
+
+
