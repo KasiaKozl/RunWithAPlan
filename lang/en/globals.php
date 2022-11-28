@@ -1,0 +1,36 @@
+<?php
+
+return [
+
+    'hello_runner' => 'Welcome to our App!',
+    'message_runner' => 'Are you ready for some running?',
+    'all_trainings' => 'All trainings',
+    'level' => 'Level',
+    'distance' => 'Distance',
+    'weeks' => 'Weeks',
+    'file' => 'File',
+    'action' => 'Action',
+    'open' => 'Open',
+    'hello_coach' => 'Hello Coach!',
+    'message_coach' => 'What are you here for today?',
+    'upload' => 'Upload a training',
+    'new_training' => 'New Training',
+    'ask_level' => 'This is a training for runners that are:',
+    'beginner' => 'Beginner',
+    'intermediate' => 'Intermediate',
+    'advanced' => 'Advanced',
+    'best_km' => 'It is best for the distance of (in km)',
+    'weeks_necessary' => 'How many weeks will it take to complete it?',
+    'upload_file' => 'Upload Your file',
+    'cancel' => 'Cancel',
+    'done' => 'Done!',
+    'close' => 'Close',
+    'delete' => 'Delete',
+    'update' => 'Update',
+    'see_all' => 'See all trainings',
+    'all_available' => 'All Available Trainings',
+    'distance_km' => 'Distance in km',
+    'time_weeks' => 'Time in weeks',
+    'upload_new' => 'Upload new file',
+    'save' => 'Save changes'
+];

@@ -1,0 +1,36 @@
+<?php
+
+return [
+
+    'Hello runner' => 'Bienvenido a nuestra aplicación!',
+    'Message runner' => 'Preparado para entrenar?',
+    'See all available' => 'Ver tods los entrenamientos disponibles',
+    'All trainings' => 'Entrenamientos',
+    'Level' => 'Nivel',
+    'Distance' => 'Distancia',
+    'Weeks' => 'Semanas',
+    'File' => 'Archivo',
+    'Action' => 'Acción',
+    'Open' => 'Abrir',
+    'Hello Coach' => 'Hola entrenador!',
+    'Message coach' => 'Que acción quieres tomar?',
+    'Upload' => 'Subir un entrenamiento',
+    'Ask level' => 'Este entrenamiento es adecuado para nivel:',
+    'Beginner' => 'Principiante',
+    'Intermediate' => 'Intermedio',
+    'Advanced' => 'Avanzado',
+    'Best for km' => 'Está pensado para la distancia de (en km)',
+    'Weeks necessary' => 'El tiempo que se tarda en realizarlo (en semanas)',
+    'Upload file' => 'Sube tu archivo',
+    'Cancel' => 'Cancelar',
+    'Done' => 'Hecho!',
+    'Close' => 'Cerrar',
+    'Delete' => 'Eliminar',
+    'Update' => 'Editar',
+    'See all' => 'Ver todos los entrenamientos',
+    'All available' => 'Ver los entrenamientos disponibles',
+    'Distance in km' => 'Distancia en km',
+    'Time in weeks' => 'Tiempo en semanas',
+    'Upload new' => 'Subir un archivo nuevo',
+    'Save' => 'Guardar cambios'
+];

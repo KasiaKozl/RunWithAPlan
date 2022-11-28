@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Welcome to our App!</div>
+                <div class="card-header">{{ __('globals.hello_runner') }}</div>
 
                 <div class="card-body d-grid gap-2">
                     @if (session('status'))
@@ -16,11 +16,11 @@
                     @endif
 
                     <div class="card-body text-center">
-                        Are you ready for some running?
+                    {{ __('globals.message_runner') }}
                     </div>
 
                     <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#seeAllModal">
-                      See all available trainings
+                    {{ __('globals.all_available') }}
                     </button>
 
                     <!-- Modal -->
@@ -28,7 +28,7 @@
                             <div class="modal-dialog modal-dialog-centered modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="seeAllModalLabel">All trainings</h1>
+                                        <h1 class="modal-title fs-5" id="seeAllModalLabel">{{ __('globals.all_trainings') }}</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
 
@@ -41,11 +41,11 @@
                             <table id="runnerTrainingIndex" class="table " style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th class=" text-center">Level</th>
-                                        <th class=" text-center">Distance</th>
-                                        <th class=" text-center">Weeks</th>
-                                        <th class=" text-center">File</th>
-                                        <th class=" text-center">Action</th>
+                                        <th class=" text-center">{{ __('globals.level') }}</th>
+                                        <th class=" text-center">{{ __('globals.distance') }}</th>
+                                        <th class=" text-center">{{ __('globals.weeks') }}</th>
+                                        <th class=" text-center">{{ __('globals.file') }}</th>
+                                        <th class=" text-center">{{ __('globals.action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -58,7 +58,7 @@
                                     <td class=" text-center">
                                         <a href="example.pdf" target="_blank">
                                             <button type="button" class="btn btn-primary ">
-                                            Open
+                                            {{ __('globals.open') }}
                                             </button>
                                         </a>
                                     </td>

@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Hello Coach!</div>
+                <div class="card-header">{{ __('globals.hello_coach') }}</div>
 
                 <div class="card-body d-grid gap-2">
                     @if (session('status'))
@@ -15,12 +15,12 @@
                         </div>
                     @endif
                     <div class="card-body text-center">
-                        What are you here for today?
+                    {{ __('globals.message_coach') }}
                     </div>
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
-                      Upload a training
+                    {{ __('globals.upload') }}
                     </button>
                     
 
@@ -29,7 +29,7 @@
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">New Training</h1>
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ __('globals.new_training') }}</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
 
@@ -39,15 +39,15 @@
                             @csrf()
                             
                                 <div class="row mb-3">
-                                 <label for="level" class="col-md-4 col-form-label text-md-end">This is a training for runners that are:</label>
+                                 <label for="level" class="col-md-4 col-form-label text-md-end">{{ __('globals.ask_level') }}</label>
 
                                 <div class="col-md-6">
                                     <select name="level" id="level" form="newTraining" class="form-control" required autocomplete="new-level">
                                         
                                             <option value=""></option>
-                                            <option value="beginner">Beginner</option>
-                                            <option value="intermediate">Intermediate</option>
-                                            <option value="advanced">Advanced</option>
+                                            <option value="Beginner">{{ __('globals.beginner') }}</option>
+                                            <option value="Intermediate">{{ __('globals.intermediate') }}</option>
+                                            <option value="Advanced">{{ __('globals.advanced') }}</option>
                                         
                                         
                                     </select>
@@ -55,7 +55,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                 <label for="distance" class="col-md-4 col-form-label text-md-end">It's best for the distance of (in km)</label>
+                                 <label for="distance" class="col-md-4 col-form-label text-md-end">{{ __('globals.best_km') }}</label>
 
                                 <div class="col-md-6">
                                 <select name="distance" id="distance" form="newTraining" class="form-control" required autocomplete="new-distance">
@@ -69,7 +69,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                 <label for="time" class="col-md-4 col-form-label text-md-end">How many weeks will it take to complete it?</label>
+                                 <label for="time" class="col-md-4 col-form-label text-md-end">{{ __('globals.weeks_necessary') }}</label>
 
                                 <div class="col-md-6">
                                 <select name="time" id="time" form="newTraining" class="form-control" required autocomplete="new-time">
@@ -83,7 +83,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                 <label for="time" class="col-md-4 col-form-label text-md-end">Upload Your file</label>
+                                 <label for="time" class="col-md-4 col-form-label text-md-end">{{ __('globals.upload_file') }}</label>
 
                                 <div class="col-md-6">
                                 <input type="file" name="file_name" accept="application/pdf,application/vnd.ms-excel" />
@@ -91,8 +91,8 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancel</button>
-                                    <button id="getTrainingbtn" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Done!</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >{{ __('globals.cancel') }}</button>
+                                    <button id="getTrainingbtn" type="submit" class="btn btn-primary" data-bs-dismiss="modal">{{ __('globals.done') }}</button>
                                 </div>
                             </form>
                             </div>
@@ -104,7 +104,7 @@
                     
 
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#indexModal">
-                      See all trainings
+                    {{ __('globals.see_all') }}
                     </button>
                     <br>
                     <!-- Modal -->
@@ -112,7 +112,7 @@
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="indexModalLabel">All Available Trainings</h1>
+                                    <h1 class="modal-title fs-5" id="indexModalLabel">{{ __('globals.all_available') }}</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                            
@@ -123,11 +123,11 @@
                             <table id="trainingIndex" class="table " style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th class=" text-center">Level</th>
-                                        <th class=" text-center">Distance</th>
-                                        <th class=" text-center">Weeks</th>
-                                        <th class=" text-center">File</th>
-                                        <th class=" text-center">Action</th>
+                                        <th class=" text-center">{{ __('globals.level') }}</th>
+                                        <th class=" text-center">{{ __('globals.distance') }}</th>
+                                        <th class=" text-center">{{ __('globals.weeks') }}</th>
+                                        <th class=" text-center">{{ __('globals.file') }}</th>
+                                        <th class=" text-center">{{ __('globals.action') }}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -143,7 +143,7 @@
                                     <form action="/trainings/{{$training->id}}" method='POST'>
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-primary danger">Delete</button>
+                                        <button type="submit" class="btn btn-primary danger">{{ __('globals.delete') }}</button>
                                     </form>
                                     </td>
                                 </tr>
@@ -153,7 +153,7 @@
                             </div>
 
                             <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >{{ __('globals.close') }}</button>
                                     
                                 </div>
                             
@@ -185,16 +185,16 @@
                                     <select name="level" id="updatelevel" form="updateTraining" class="form-control"  required autocomplete="new-level">
                                         
                                             <option value=""></option>
-                                            <option value="Beginner">Beginner</option>
-                                            <option value="Intermediate">Intermediate</option>
-                                            <option value="Advanced">Advanced</option>
+                                            <option value="Beginner">{{ __('globals.beginner') }}</option>
+                                            <option value="Intermediate">{{ __('globals.intermediate') }}</option>
+                                            <option value="Advanced">{{ __('globals.advanced') }}</option>
                                         
                                     </select>
                                 </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                 <label for="distance" class="col-md-4 col-form-label text-md-end">Distance in km</label>
+                                 <label for="distance" class="col-md-4 col-form-label text-md-end">{{ __('globals.distance_km') }}</label>
 
                                 <div class="col-md-6">
                                 <select name="distance" id="updatedistance" form="updateTraining" class="form-control" required autocomplete="new-distance">
@@ -208,7 +208,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                 <label for="time" class="col-md-4 col-form-label text-md-end">Time in weeks</label>
+                                 <label for="time" class="col-md-4 col-form-label text-md-end">{{ __('globals.time_weeks') }}</label>
 
                                 <div class="col-md-6">
                                 <select name="time" id="updatetime" form="updateTraining" class="form-control" required autocomplete="new-time">
@@ -222,7 +222,7 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                 <label for="time" class="col-md-4 col-form-label text-md-end">Upload new file</label>
+                                 <label for="time" class="col-md-4 col-form-label text-md-end">{{ __('globals.upload_new') }}</label>
 
                                 <div class="col-md-6">
                                 <input type="file" name="file_name" accept="application/pdf,application/vnd.ms-excel" />
@@ -230,8 +230,8 @@
                                 </div>
 
                             <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancel</button>
-                                    <button type="submit" class="btn btn-primary" > Save changes</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >{{ __('globals.cancel') }}</button>
+                                    <button type="submit" class="btn btn-primary" > {{ __('globals.save') }}</button>
                                 </div>
                             
                             </div>
