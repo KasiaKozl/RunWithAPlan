@@ -37,7 +37,9 @@ class UserController extends Controller
         $planningId =$data['planning_id'];
 
         $result = $this->userService->store($name,$email, $password,$phone,$roleId,$planningId);
-        return 'Created successfully!';
+        
+        session()->flash('status', 'Created successfully!');
+        return back();
     }
 
     
@@ -62,15 +64,18 @@ class UserController extends Controller
 
 
         $this->userService->update($id, $name, $email, $password,$phone,$roleId,$planningId);
-        return 'Updated successfully!';
+       
+        session()->flash('status', 'Updated successfully!');
+        return back();
     }
 
     
     public function destroy($id)
     {
         $this->userService->delete($id);
-        return response()->json()
-        ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
+
+        session()->flash('status', 'Deleted successfully!');
+        return back();
     }
 
    

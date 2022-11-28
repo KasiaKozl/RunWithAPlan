@@ -36,7 +36,9 @@ class FormController extends Controller
         $distance=$data['distance'];
 
         $result = $this->formService->store($name, $userId, $level, $time, $distance);
-        return 'Created successfully!';
+       
+        session()->flash('status', 'Created successfully!');
+        return back();
     }
 
     
@@ -59,15 +61,18 @@ class FormController extends Controller
         $distance=$data['distance'];
 
         $this->formService->update($id, $name, $userId, $level, $time, $distance);
-        return 'Updated successfully!';
+
+        session()->flash('status', 'Updated successfully!');
+        return back();
     }
 
     
     public function destroy($id)
     {
         $this->formService->delete($id);
-        return response()->json()
-        ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
+        
+        session()->flash('status', 'Deleted successfully!');
+        return back();
     }
 
    

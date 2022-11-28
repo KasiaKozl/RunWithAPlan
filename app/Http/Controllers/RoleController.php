@@ -31,7 +31,9 @@ class RoleController extends Controller
         $name = $data['name'];
 
         $result = $this->roleService->store($name);
-        return 'Created successfully!';
+        
+        session()->flash('status', 'Created successfully!');
+        return back();
     }
 
     
@@ -50,15 +52,18 @@ class RoleController extends Controller
         $name = $data['name'];
 
         $this->roleService->update($id, $name);
-        return 'Updated successfully!';
+        
+        session()->flash('status', 'Updated successfully!');
+        return back();
     }
 
     
     public function destroy($id)
     {
         $this->roleService->delete($id);
-        return response()->json()
-        ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
+        
+        session()->flash('status', 'Deleted successfully!');
+        return back();
     }
 
    

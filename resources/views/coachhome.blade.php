@@ -15,7 +15,7 @@
                         </div>
                     @endif
                     <div class="card-body text-center">
-                        What are you here for today:
+                        What are you here for today?
                     </div>
 
                     <!-- Button trigger modal -->

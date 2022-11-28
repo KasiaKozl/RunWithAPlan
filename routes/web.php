@@ -23,13 +23,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/coachhome', [App\Http\Controllers\CoachHomeController::class, 'index'])->name('coachhome');
 
-//Route::post('/forms', [App\Http\Controllers\FormController::class, 'store']);
-
-
-
 Route::post('trainings', [App\Http\Controllers\TrainingController::class, 'store']);
 Route::put('trainings/{training}', [App\Http\Controllers\TrainingController::class, 'update']);
 Route::delete('trainings/{training}', [App\Http\Controllers\TrainingController::class, 'destroy']);
+
 
 
 

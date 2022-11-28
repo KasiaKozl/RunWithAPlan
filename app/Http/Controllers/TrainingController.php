@@ -39,7 +39,8 @@ class TrainingController extends Controller
 
         $data->save();
    
-        return 'Created successfully!';
+        session()->flash('status', 'Created successfully!');
+        return back();
     }
 
     
@@ -47,6 +48,7 @@ class TrainingController extends Controller
     {
         return response()->json([
             'data' => $this->trainingService->show($level, $distance, $time)
+            
         ]);
     }
 
@@ -63,14 +65,17 @@ class TrainingController extends Controller
 
         $data->save();
    
-        return 'Updated successfully!';
+        session()->flash('status', 'Updated successfully!');
+        return back();
     }
 
     
     public function destroy($id)
     {
         $this->trainingService->delete($id);
-        return 'deleted ok';
+        
+        session()->flash('status', 'Deleted successfully!');
+        return back();
     }
    
 }

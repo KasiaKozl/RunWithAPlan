@@ -33,7 +33,9 @@ class PlanningController extends Controller
         $name = $data['name'];
 
         $result = $this->planningService->store($name);
-        return 'Created successfully!';
+
+        session()->flash('status', 'Created successfully!');
+        return back();
     }
 
     
@@ -52,15 +54,18 @@ class PlanningController extends Controller
         $name = $data['name'];
 
         $this->planningService->update($id, $name);
-        return 'Updated successfully!';
+
+        session()->flash('status', 'Updated successfully!');
+        return back();
     }
 
     
     public function destroy($id)
     {
         $this->planningService->delete($id);
-        return response()->json()
-        ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
+
+        session()->flash('status', 'Deleted successfully!');
+        return back();
     }
 
    
