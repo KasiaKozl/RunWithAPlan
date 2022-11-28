@@ -30,6 +30,9 @@ Route::post('trainings', [App\Http\Controllers\TrainingController::class, 'store
 Route::put('trainings/{training}', [App\Http\Controllers\TrainingController::class, 'update']);
 Route::delete('trainings/{training}', [App\Http\Controllers\TrainingController::class, 'destroy']);
 
+//Route::get('lang/home', [LangController::class, 'index']);
+//Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');
+
 
 
 
