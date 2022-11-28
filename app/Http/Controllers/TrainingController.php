@@ -70,9 +70,7 @@ class TrainingController extends Controller
     public function destroy($id)
     {
         $this->trainingService->delete($id);
-        return response()->json()
-        ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);
+        return 'deleted ok';
     }
-
    
 }

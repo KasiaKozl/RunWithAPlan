@@ -36,7 +36,7 @@
                             <div class="modal-body">
 
                             <form method="POST" action="/trainings" id="newTraining">
-                            {{ csrf_field() }}
+                            @csrf()
                             
                                 <div class="row mb-3">
                                  <label for="level" class="col-md-4 col-form-label text-md-end">This is a training for runners that are:</label>
@@ -139,8 +139,13 @@
                                     <td class=" text-center">{{$training->file_name}}</td>
                                     <td class=" text-center">
                                     <a href="/trainings/{{$training->id}}/update" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">Edit</a>
-                                    <button class="btn btn-primary danger">Delete</button></td>
-                                    
+                                   
+                                    <form action="/trainings/{{$training->id}}" method='POST'>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-primary danger">Delete</button>
+                                    </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>
