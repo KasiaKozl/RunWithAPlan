@@ -34,4 +34,4 @@ Route::resource('quotes', QuoteController::class);
 Route::resource('plannings', PlanningController::class);
 Route::resource('forms', FormController::class); 
 Route::resource('users', UserController::class);  
-Route::resource('trainings', TrainingController::class);  
+//Route::resource('trainings', TrainingController::class);  

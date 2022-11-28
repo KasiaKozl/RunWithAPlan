@@ -32,15 +32,19 @@
                                     <h1 class="modal-title fs-5" id="exampleModalLabel">New Training</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
+
                             <div class="modal-body">
-                            <form method="POST" action="/" id="newTraining">
+
+                            <form method="POST" action="/trainings" id="newTraining">
                             {{ csrf_field() }}
+                            
                                 <div class="row mb-3">
                                  <label for="level" class="col-md-4 col-form-label text-md-end">This is a training for runners that are:</label>
 
                                 <div class="col-md-6">
                                     <select name="level" id="level" form="newTraining" class="form-control" required autocomplete="new-level">
                                         
+                                            <option value=""></option>
                                             <option value="beginner">Beginner</option>
                                             <option value="intermediate">Intermediate</option>
                                             <option value="advanced">Advanced</option>
@@ -56,6 +60,7 @@
                                 <div class="col-md-6">
                                 <select name="distance" id="distance" form="newTraining" class="form-control" required autocomplete="new-distance">
                                             
+                                            <option value=""></option>
                                             <option value="5">5</option>
                                             <option value="10">10</option>
                                             
@@ -69,6 +74,7 @@
                                 <div class="col-md-6">
                                 <select name="time" id="time" form="newTraining" class="form-control" required autocomplete="new-time">
                                         
+                                            <option value=""></option>
                                             <option value="4">4</option>
                                             <option value="8">8</option>
                                             <option value="12">12</option>
@@ -80,13 +86,13 @@
                                  <label for="time" class="col-md-4 col-form-label text-md-end">Upload Your file</label>
 
                                 <div class="col-md-6">
-                                <input type="file" name="upload" accept="application/pdf,application/vnd.ms-excel" />
+                                <input type="file" name="file_name" accept="application/pdf,application/vnd.ms-excel" />
                                 </div>
                                 </div>
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancel</button>
-                                    <button id="getTrainingbtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Done!</button>
+                                    <button id="getTrainingbtn" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Done!</button>
                                 </div>
                             </form>
                             </div>
@@ -131,8 +137,9 @@
                                     <td class=" text-center">{{$training->distance}}</td>
                                     <td class=" text-center">{{$training->time}}</td>
                                     <td class=" text-center">{{$training->file_name}}</td>
-                                    <td class=" text-center"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">Edit</button>
-                                    <button class="btn btn-primary">Delete</button></td>
+                                    <td class=" text-center">
+                                    <a href="/trainings/{{$training->id}}/update" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">Edit</a>
+                                    <button class="btn btn-primary danger">Delete</button></td>
                                     
                                 </tr>
                                 @endforeach
@@ -161,17 +168,21 @@
                                 </div>
                            
                             <div class="modal-body">
-                            <form method="POST" action="/" id="updateTraining">
+                            <form method="POST" action="/trainings/{{$training->id}}" id="updateTraining">
                             {{ csrf_field() }}
+                            @method('PUT')
+                            
+                                <input type="hidden" name="id" id="id" value="{{$training->id}}"/>
                                 <div class="row mb-3">
                                  <label for="level" class="col-md-4 col-form-label text-md-end">Level</label>
 
                                 <div class="col-md-6">
-                                    <select name="level" id="updatelevel" form="updateTraining" class="form-control" required autocomplete="new-level">
+                                    <select name="level" id="updatelevel" form="updateTraining" class="form-control"  required autocomplete="new-level">
                                         
-                                            <option value="beginner">Beginner</option>
-                                            <option value="intermediate">Intermediate</option>
-                                            <option value="advanced">Advanced</option>
+                                            <option value=""></option>
+                                            <option value="Beginner">Beginner</option>
+                                            <option value="Intermediate">Intermediate</option>
+                                            <option value="Advanced">Advanced</option>
                                         
                                     </select>
                                 </div>
@@ -183,6 +194,7 @@
                                 <div class="col-md-6">
                                 <select name="distance" id="updatedistance" form="updateTraining" class="form-control" required autocomplete="new-distance">
                                             
+                                            <option value=""></option>
                                             <option value="5">5</option>
                                             <option value="10">10</option>
                                             
@@ -196,6 +208,7 @@
                                 <div class="col-md-6">
                                 <select name="time" id="updatetime" form="updateTraining" class="form-control" required autocomplete="new-time">
                                         
+                                            <option value=""></option>
                                             <option value="4">4</option>
                                             <option value="8">8</option>
                                             <option value="12">12</option>
@@ -207,13 +220,13 @@
                                  <label for="time" class="col-md-4 col-form-label text-md-end">Upload new file</label>
 
                                 <div class="col-md-6">
-                                <input type="file" name="upload" accept="application/pdf,application/vnd.ms-excel" />
+                                <input type="file" name="file_name" accept="application/pdf,application/vnd.ms-excel" />
                                 </div>
                                 </div>
 
                             <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancel</button>
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" >Save changes</button>
+                                    <button type="submit" class="btn btn-primary" > Save changes</button>
                                 </div>
                             
                             </div>

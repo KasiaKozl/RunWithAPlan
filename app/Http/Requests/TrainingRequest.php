@@ -14,7 +14,7 @@ class TrainingRequest extends FormRequest
                     'level'      => 'required|string|max:191',
                     'distance'   => 'required|string|max:191',
                     'time'       => 'required|string|max:191',
-                    'file_name'  => 'unique|mimes:pdf|max:1000',
+                    'file_name'  => 'required|mimes:pdf|max:1000',
                     
                 ];
             case 'POST':
@@ -22,7 +22,7 @@ class TrainingRequest extends FormRequest
                     'level'      => 'required|string|max:191',
                     'distance'   => 'required|string|max:191',
                     'time'       => 'required|string|max:191',
-                    'file_name'  => 'unique|mimes:pdf|max:1000',
+                    'file_name'  => 'required|mimes:pdf|max:1000',
                     
                 ];
             case 'GET':
@@ -31,7 +31,7 @@ class TrainingRequest extends FormRequest
                     'level'      => 'required|string|max:191',
                     'distance'   => 'required|string|max:191',
                     'time'       => 'required|string|max:191',
-                    'file_name'  => 'unique|mimes:pdf|max:1000',
+                    'file_name'  => 'required|mimes:pdf|max:1000',
                 ];
             case 'DELETE':
                 return [

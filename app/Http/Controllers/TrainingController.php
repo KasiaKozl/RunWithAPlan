@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TrainingRequest;
+use App\Models\Training;
 use App\Providers\TrainingServiceProvider;
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 
 
 
@@ -26,16 +28,17 @@ class TrainingController extends Controller
         
     }
 
-    public function store(TrainingRequest $request) 
+    public function store(Request $request) 
     {
-        $data = $request->validated();
+        $data = new Training();
 
-        $level = $data['level'];
-        $distance = $data['distance'];
-        $time = $data['time'];
-        $fileName = $data['file_name'];
+        $data->level = $request->get('level');
+        $data->distance = $request->get('distance');
+        $data->time = $request->get('time');
+        $data->file_name = $request->get('file_name');
 
-        $result = $this->trainingService->store($level, $distance, $time, $fileName);
+        $data->save();
+   
         return 'Created successfully!';
     }
 
@@ -47,17 +50,19 @@ class TrainingController extends Controller
         ]);
     }
 
+   
     
-    public function update(TrainingRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $data = $request->validated();
+        $data = Training::findOrFail($id);
 
-        $level = $data['level'];
-        $distance = $data['distance'];
-        $time = $data['time'];
-        $fileName = $data['file_name'];
+        $data->level = $request->get('level');
+        $data->distance = $request->get('distance');
+        $data->time = $request->get('time');
+        $data->file_name = $request->get('file_name');
 
-        $this->trainingService->update($id, $level, $distance, $time, $fileName);
+        $data->save();
+   
         return 'Updated successfully!';
     }
 

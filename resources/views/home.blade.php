@@ -1,16 +1,3 @@
-<?php
-$con = mysqli_connect("localhost", "root", "", "laravel");
-$sqlLevel = "Select Distinct level from trainings";
-$resLevel = mysqli_query($con, $sqlLevel);
-
-$sqlDistance = "Select Distinct distance from trainings";
-$resDistance = mysqli_query($con, $sqlDistance);
-
-$sqlTime = "Select Distinct time from trainings";
-$resTime = mysqli_query($con, $sqlTime);
-
-
-?>
 
 @extends('layouts.app')
 
@@ -52,9 +39,13 @@ $resTime = mysqli_query($con, $sqlTime);
                                     <td class=" text-center">{{$training->distance}}</td>
                                     <td class=" text-center">{{$training->time}}</td>
                                     <td class=" text-center">{{$training->file_name}}</td>
-                                    <td class=" text-center"><a href="example.pdf" target="_blank"><button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#pdfModal">
-                      Open
-                    </button></a></td>
+                                    <td class=" text-center">
+                                        <a href="example.pdf" target="_blank">
+                                            <button type="button" class="btn btn-primary ">
+                                            Open
+                                            </button>
+                                        </a>
+                                    </td>
                                     
                                 </tr>
                                 @endforeach

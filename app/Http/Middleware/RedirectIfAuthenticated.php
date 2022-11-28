@@ -26,14 +26,14 @@ class RedirectIfAuthenticated
                return redirect('/coachhome');
                break;
             case 'runner':
-               return redirect('home');
+               return redirect('/home');
                break; 
       
             default:
-               return redirect('/home'); 
+               return redirect('/login'); 
                break;
           }
         }
-        return $next($request);
-      }
+       return $next($request);
+      } 
 }
