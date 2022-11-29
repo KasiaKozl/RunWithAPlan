@@ -16,22 +16,20 @@ use Illuminate\Support\Facades\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-Auth::routes();
+    Auth::routes();
+
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/coachhome', [App\Http\Controllers\CoachHomeController::class, 'index'])->name('coachhome');
+
+    Route::post('trainings', [App\Http\Controllers\TrainingController::class, 'store']);
+    Route::put('trainings/{training}', [App\Http\Controllers\TrainingController::class, 'update']);
+    Route::delete('trainings/{training}', [App\Http\Controllers\TrainingController::class, 'destroy']);
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/coachhome', [App\Http\Controllers\CoachHomeController::class, 'index'])->name('coachhome');
-
-Route::post('trainings', [App\Http\Controllers\TrainingController::class, 'store']);
-Route::put('trainings/{training}', [App\Http\Controllers\TrainingController::class, 'update']);
-Route::delete('trainings/{training}', [App\Http\Controllers\TrainingController::class, 'destroy']);
-
-//Route::get('lang/home', [LangController::class, 'index']);
-//Route::get('lang/change', [LangController::class, 'change'])->name('changeLang');
 
 
 

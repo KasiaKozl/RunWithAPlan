@@ -14,7 +14,20 @@ return [
     */
 
     'failed' => 'Los datos no coinciden con ningún usuario.',
-    'password' => 'La contraseña no coincide.',
+    'password_incorrect' => 'La contraseña no coincide.',
     'throttle' => 'Demasiados intentos. Espera unos minutos.',
+
+    'email' => 'Correo electrónico',
+    'register' => 'Registrarse',
+    'login' => 'Logearse',
+    'remember' => 'Recuerda mis credenciales',
+    'forgot' => 'Olvidaste tu contraseña?',
+    'password' => 'Contraseña',
+    'confirm_password' => 'Confirma tu contraseña',
+    'phone' => 'Teléfono',
+    'name' => 'Nombre',
+    'register_as' => 'Me registro como',
+    'coach' => 'Entrenador',
+    'runner' => 'Atleta'
 
 ];

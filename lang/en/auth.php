@@ -13,8 +13,20 @@ return [
     |
     */
 
+    'email' => 'Email',
+    'register' => 'Register',
+    'login' => 'Login',
+    'remember' => 'Remember me',
+    'password' => 'Password',
+    'forgot' => 'Forgot Your password?',
+    'confirm_password' => 'Confirm password',
+    'phone' => 'Phone',
+    'name' => 'Name',
+    'register_as' => 'I am registering as:',
+    'coach' => 'Coach',
+    'runner' => 'Runner',
     'failed' => 'These credentials do not match our records.',
-    'password' => 'The provided password is incorrect.',
+    'password_incorrect' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
 ];
