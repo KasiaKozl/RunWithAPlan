@@ -2,6 +2,42 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+.btn-primary{
+        background-color: #933225;
+        border-color: #a12817;
+    }
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+        background-color: #a95445;
+        border-color: #a12817;
+        box-shadow: 0 0 10px #933225;
+    }
+.btn-close, .btn-close:active, .btn-primary:focus{
+    box-shadow: 0 0 10px #933225;
+}
+
+    body {
+        position: relative;
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: url(group2.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+option:active {
+    border-color: #a12817;
+        box-shadow: 0 0 10px #933225;
+        
+}
+
+
+
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -25,11 +61,11 @@
                     
 
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{ __('globals.new_training') }}</h1>
+                                    <h1 class="modal-title fs-5" id="newModalLabel">{{ __('globals.new_training') }}</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
 

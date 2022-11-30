@@ -20,10 +20,32 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.0/css/responsive.bootstrap5.min.css">
 
+<style>
+.navbar-brand{
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: white;
+}
+.nav-link{
+    color:white;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+nav {
+    background-color: #933225;;
+}
+.navbar-dropdown:active{
+    color: #933225;;
+}
+ 
+</style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Run With a Plan

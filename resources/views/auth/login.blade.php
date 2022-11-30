@@ -1,6 +1,53 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+    .btn-primary{
+        background-color: #933225;
+        border-color: #a12817;
+    }
+    .btn-primary:hover{
+        background-color: #a95445;
+        border-color: #a12817;
+    }
+
+    .btn-link{
+        color: #933225;
+    }
+
+    .btn-link:hover{
+        color: black;
+    }
+
+    .form-check-input:focus, .form-control:focus{
+        border-color: #a12817;
+        box-shadow: 0 0 10px #933225;
+    }
+
+    .form-check-input:checked{
+        background-color: #933225;
+        border-color: #a12817;
+    }
+    
+    .card {
+        opacity: 0.9;
+    }
+
+    body {
+        position: relative;
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: url(group.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -54,12 +101,12 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('login') }}
+                                    {{ __('auth.login') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('forgot') }}
+                                        {{ __('auth.forgot') }}
                                     </a>
                                 @endif
                             </div>

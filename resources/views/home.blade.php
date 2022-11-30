@@ -2,6 +2,37 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+.btn-primary{
+        background-color: #933225;
+        border-color: #a12817;
+    }
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
+        background-color: #a95445;
+        border-color: #a12817;
+        box-shadow: 0 0 10px #933225;
+    }
+.btn-close, .btn-close:active, .btn-primary:focus{
+    box-shadow: 0 0 10px #933225;
+}
+
+    body {
+        position: relative;
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: url(group2.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+
+
+</style>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

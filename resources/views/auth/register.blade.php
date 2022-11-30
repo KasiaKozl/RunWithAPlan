@@ -1,6 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+     .btn-primary{
+        background-color: #933225;
+        border-color: #a12817;
+    }
+    .btn-primary:hover{
+        background-color: #a95445;
+        border-color: #a12817;
+    }
+
+    .form-check-input:focus, .form-control:focus{
+        border-color: #a12817;
+        box-shadow: 0 0 10px #933225;
+    }
+    
+    .card {
+        opacity: 0.9;
+    }
+
+    body {
+        position: relative;
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background: url(solo.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
