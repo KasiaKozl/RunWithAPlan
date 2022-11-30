@@ -5,16 +5,10 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Form>
- */
+
 class FormFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    //Defining default data that should be inserted in db with seeders
     public function definition()
     {
         $users = User::all()->pluck('id');

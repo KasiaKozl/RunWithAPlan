@@ -47,6 +47,7 @@
                 max-width: 400px;
                 margin: 20px 125px;
                 letter-spacing: 1px;
+                padding-bottom: 40px;
             }
             
             .infoContainer .info h2{
@@ -80,6 +81,39 @@
                     font-size: 15px;
                 }
             }
+
+            /* Slideshow container */
+            .slidequote-container {
+                    max-width: 400px;
+                    position: relative;
+                    margin: 125px;
+                }
+
+            .mySlides {
+                    display: none;
+                }
+            /* Quote text */
+            .text {
+            color: #f2f2f2;
+            font-size: 20px;
+            padding: 10px 10px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 6s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
         </style>
     </head>
 
@@ -94,8 +128,43 @@
                      cum quaerat natus aut nulla amet et repudiandae alias. Quo eligendi deserunt et voluptatum autem rem quia perferendis.
                      Qui debitis voluptas ut repellendus exercitationem qui doloribus libero.</p>
             </div>
-        </section>        
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    </body>
+        </section>       
+        
+
+<div class="slidequote-container">
+
+<div class="mySlides fade">
+  <div class="text">"Lorem ipsum dolor sit amet. Et sint assumenda sed commodi sequi aut quaerat blanditiis non illum."</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="text">"Cum quaerat natus aut nulla amet et repudiandae alias. Quo eligendi deserunt et."</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="text">"Qui debitis voluptas ut repellendus exercitationem qui doloribus libero."</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    
+    for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    }
+    
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 7000); 
+    }
+</script>
+</body>
 </html>
 @endsection

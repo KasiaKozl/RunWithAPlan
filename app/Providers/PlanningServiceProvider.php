@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 
 use App\Models\Planning;
 
+//Intermediate layer between repository and and controller to handle logic
 class PlanningServiceProvider 
 {
     private $planningRepository;

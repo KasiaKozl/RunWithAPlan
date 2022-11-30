@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\QuoteRequest;
 use App\Providers\QuoteServiceProvider;
-use Illuminate\Http\Response;
-
-
 
 class QuoteController extends Controller
 {
@@ -17,6 +14,8 @@ class QuoteController extends Controller
     }
 
 // CRUD functions
+
+//Get all
     public function index()
     {
         return response()->json([
@@ -25,6 +24,7 @@ class QuoteController extends Controller
         
     }
 
+//Save, first perform validation than store
     public function store(QuoteRequest $request) 
     {
         $data = $request->validated();
@@ -38,6 +38,7 @@ class QuoteController extends Controller
     }
 
     
+//Show specific data by id
     public function show($id)
     {
         return response()->json([
@@ -45,7 +46,7 @@ class QuoteController extends Controller
         ]);
     }
 
-    
+//Save, first perform validation than update given the id
     public function update(QuoteRequest $request, $id)
     {
         $data = $request->validated();
@@ -58,7 +59,7 @@ class QuoteController extends Controller
         return back();
     }
 
-    
+// Delete specific data
     public function destroy($id)
     {
         $this->quoteService->delete($id);

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\User;
 
+// Crud functions that can be performed on given model
 class UserRepository {
 
     public function __construct(User $model)

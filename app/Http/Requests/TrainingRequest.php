@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+//Defining the rules that every request should respect, grouped by methods
 class TrainingRequest extends FormRequest
 {
     public function rules()

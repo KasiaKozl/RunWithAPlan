@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PlanningRequest;
 use App\Providers\PlanningServiceProvider;
-use Illuminate\Http\Response;
-
-
 
 class PlanningController extends Controller
 {
@@ -19,6 +16,8 @@ class PlanningController extends Controller
     }
 
 //CRUD functions
+
+//Show all
     public function index()
     {
         return response()->json([
@@ -27,6 +26,7 @@ class PlanningController extends Controller
         
     }
 
+//Save, first validate entered data than perform store
     public function store(PlanningRequest $request) 
     {
         $data = $request->validated();
@@ -40,6 +40,7 @@ class PlanningController extends Controller
     }
 
     
+//Show specific data given the id
     public function show($id)
     {
         return response()->json([
@@ -47,7 +48,7 @@ class PlanningController extends Controller
         ]);
     }
 
-    
+//Save, first validate entered data than perform update
     public function update(PlanningRequest $request, $id)
     {
         $data = $request->validated();
@@ -60,7 +61,7 @@ class PlanningController extends Controller
         return back();
     }
 
-    
+//Delete specific data    
     public function destroy($id)
     {
         $this->planningService->delete($id);

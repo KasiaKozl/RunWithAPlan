@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Planning;
 
+// Crud functions that can be performed on given model
 class PlanningRepository {
 
     public function __construct(Planning $model)

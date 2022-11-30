@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+//Transformation layer that decides which data will be displayed for the user
 class QuoteResource extends JsonResource
 {
     /**

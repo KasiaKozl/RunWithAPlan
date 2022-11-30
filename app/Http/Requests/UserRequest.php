@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+//Defining the rules that every request should respect, grouped by methods
 class UserRequest extends FormRequest
 {
     public function rules()
@@ -16,7 +17,7 @@ class UserRequest extends FormRequest
                     'email'         => 'required|email|unique|max:191',
                     'phone'         => 'required|phone|unique|max:12',
                     'planning_id'   => 'required|numeric|min:1',
-                    'role_id'       => 'required|numeric|min:1'
+                    'type'          => 'required|numeric|min:1'
                     
                 ];
             case 'POST':
@@ -26,7 +27,7 @@ class UserRequest extends FormRequest
                     'email'         => 'required|email|unique|max:191',
                     'phone'         => 'required|phone|unique|max:12',
                     'planning_id'   => 'required|numeric|min:1',
-                    'role_id'       => 'required|numeric|min:1'
+                    'type'          => 'required|numeric|min:1'
                     
                     
                 ];
@@ -38,7 +39,7 @@ class UserRequest extends FormRequest
                     'email'         => 'required|email|unique|max:191',
                     'phone'         => 'required|phone|unique|max:12',
                     'planning_id'   => 'required|numeric|min:1',
-                    'role_id'       => 'required|numeric|min:1'
+                    'type'          => 'required|numeric|min:1'
                 ];
             case 'DELETE':
                 return [

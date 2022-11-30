@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Quote;
 
+// Crud functions that can be performed on given model
 class QuoteRepository {
 
     public function __construct(Quote $model)

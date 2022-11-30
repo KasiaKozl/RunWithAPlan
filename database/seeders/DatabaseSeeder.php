@@ -8,11 +8,7 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
+   //Seeding given tables with default data specified in Factories
     public function run()
     {
         $this->call([

@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FormsRequest;
 use App\Providers\FormServiceProvider;
-use Illuminate\Http\Response;
-
-
 
 class FormController extends Controller
 {
@@ -17,8 +14,10 @@ class FormController extends Controller
         $this->formService = $formService;
     }
 
-// CRUD  functions
+// CRUD  functions 
 
+
+//Show all forms
     public function index()
     {
         return response()->json([
@@ -27,6 +26,9 @@ class FormController extends Controller
         
     }
 
+
+// Save in db new form data
+//First validate the request, get data by key names from data array, perform store
     public function store(FormsRequest $request) 
     {
         $data = $request->validated();
@@ -44,6 +46,7 @@ class FormController extends Controller
     }
 
     
+// Show a specific form data
     public function show($id)
     {
         return response()->json([
@@ -52,6 +55,8 @@ class FormController extends Controller
     }
 
     
+//Update data given the id
+//First validate the request, get data by key names from data array, perform update
     public function update(FormsRequest $request, $id)
     {
         $data = $request->validated();
@@ -69,6 +74,7 @@ class FormController extends Controller
     }
 
     
+//Delete specific data
     public function destroy($id)
     {
         $this->formService->delete($id);

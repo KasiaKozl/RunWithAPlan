@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Form;
 
+// Crud functions that can be performed on given model
 class FormRepository {
 
     public function __construct(Form $model)

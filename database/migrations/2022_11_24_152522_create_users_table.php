@@ -8,11 +8,7 @@ use App\Models\Planning;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+    //Create table with defined columns 
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -22,16 +18,13 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone');
             $table->foreignIdFor(Role::class);
+            // 0->guest, 1->coach, 2->runner
             $table->foreignIdFor(Planning::class);
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+   
     public function down()
     {
         Schema::dropIfExists('users');

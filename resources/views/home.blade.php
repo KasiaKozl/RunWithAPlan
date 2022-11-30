@@ -29,6 +29,15 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
+
+    .whatsapp {
+        position:fixed;
+        width:80px;
+        height:80px;
+        bottom:40px;
+        right:40px;
+        z-index:100;
+    }
 </style>
 
 <div class="container">
@@ -101,6 +110,12 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="whatsapp">
+    <a href="https://wa.me/34555555555?text=Reach%20us%20instantly" class="whatsapp" target="_blank">
+        <img src="whatsapp.png" alt="Whatsapp chat" />
+    </a>
 </div>
 @endsection
 

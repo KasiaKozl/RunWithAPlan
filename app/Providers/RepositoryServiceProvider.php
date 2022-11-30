@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\QuoteRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {

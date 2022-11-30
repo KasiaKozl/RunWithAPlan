@@ -3,22 +3,17 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Role;
 use App\Models\Planning;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
- */
+
 class UserFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+   //Defining default data that should be inserted in db with seeders
     public function definition()
     {
+
+        //get foreign keys from Role and Planning tables
         $roles = Role::all()->pluck('id');
         $plannings = Planning::all()->pluck('id');
 

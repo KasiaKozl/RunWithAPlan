@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Role;
 
+// Crud functions that can be performed on given model
 class RoleRepository {
 
     public function __construct(Role $model)

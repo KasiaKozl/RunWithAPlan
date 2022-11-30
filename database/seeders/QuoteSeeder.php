@@ -8,11 +8,7 @@ use App\Models\Quote;
 
 class QuoteSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+     //Create fake inserts to db authomatically
     public function run()
     {
         Quote::factory()->count(15)->create();

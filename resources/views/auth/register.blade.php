@@ -115,7 +115,7 @@
                             <div class="col-md-6">
                                 <select name="role_id" id="role_id" form="registerForm" class="form-control" required autocomplete="new-role_id">
                                      <option value="1">{{ __('auth.coach') }}</option>
-                                     <option value="2">{{ __('auth.runner') }}</option>
+                                     <option value="0">{{ __('auth.runner') }}</option>
                                 </select>
 
                                 @error('role_id')

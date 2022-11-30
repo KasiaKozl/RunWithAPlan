@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 
 use App\Models\Quote;
 
+//Intermediate layer between repository and and controller to handle logic
 class QuoteServiceProvider 
 {
     private $quoteRepository;

@@ -1,12 +1,12 @@
 <?php
-
+  
 namespace App\Http\Controllers\Auth;
-
+  
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Http\Request;
+  
 class LoginController extends Controller
 {
     /*
@@ -19,30 +19,16 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
+  
     use AuthenticatesUsers;
-
+  
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    public function redirectTo() {
-        $role = Auth::user()->role; 
-        switch ($role) {
-          case 'coach':
-            return '/coachhome';
-            break;
-          case 'runner':
-            return '/home';
-            break; 
-      
-          default:
-            return '/home'; 
-          break;
-        }
-      }
-
+    protected $redirectTo = RouteServiceProvider::HOME;
+  
     /**
      * Create a new controller instance.
      *
@@ -51,5 +37,30 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+ 
+    public function login(Request $request)
+    {   
+        $input = $request->all();
+     
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+     
+        if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
+        {
+            if (auth()->user()->type == 'coach') {
+                return redirect()->route('coachhome');
+            }else if (auth()->user()->type == 'runner') {
+                return redirect()->route('home');
+            }else{
+                return redirect()->route('welcome');
+            }
+        }else{
+            return redirect()->route('login')
+                ->with('error','Your credentials do not match.');
+        }
+          
     }
 }

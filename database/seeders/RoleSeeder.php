@@ -8,11 +8,7 @@ use App\Models\Role;
 
 class RoleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+      //Create fake inserts to db authomatically
     public function run()
     {
         Role::factory()->create([

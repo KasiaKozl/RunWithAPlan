@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Training;
 use Illuminate\Support\Facades\DB;
 
+// Crud functions that can be performed on given model
 class TrainingRepository {
 
     public function __construct(Training $model)

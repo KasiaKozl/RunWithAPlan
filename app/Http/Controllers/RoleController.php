@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\RoleRequest;
 use App\Providers\RoleServiceProvider;
-use Illuminate\Http\Response;
 
 
-
+//Intermediate layer between repository and and controller to handle logic
 class RoleController extends Controller
 {
     private $roleService;
@@ -17,6 +16,8 @@ class RoleController extends Controller
     }
 
 //CRUD functions
+
+//Show all
     public function index()
     {
         return response()->json([
@@ -25,6 +26,7 @@ class RoleController extends Controller
         
     }
 
+//Validate introduced data and perform store 
     public function store(RoleRequest $request) 
     {
         $data = $request->validated();
@@ -37,7 +39,7 @@ class RoleController extends Controller
         return back();
     }
 
-    
+//Show specific data by id
     public function show($id)
     {
         return response()->json([
@@ -45,7 +47,7 @@ class RoleController extends Controller
         ]);
     }
 
-    
+////Validate introduced data and perform store 
     public function update(RoleRequest $request, $id)
     {
         $data = $request->validated();
@@ -58,7 +60,7 @@ class RoleController extends Controller
         return back();
     }
 
-    
+//Delete specific data
     public function destroy($id)
     {
         $this->roleService->delete($id);

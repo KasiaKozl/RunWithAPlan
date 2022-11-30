@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TrainingRequest;
 use App\Models\Training;
 use App\Providers\TrainingServiceProvider;
-use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
-
-
+//Intermediate layer between repository and and controller to handle logic
 class TrainingController extends Controller
 {
 
@@ -21,6 +18,8 @@ class TrainingController extends Controller
     }
 
 //CRUD functions
+
+//Show all 
     public function index()
     {
         return response()->json([
@@ -29,6 +28,7 @@ class TrainingController extends Controller
         
     }
 
+//Create new model instance, validate introduced data and perform store 
     public function store(Request $request) 
     {
         $data = new Training();
@@ -44,7 +44,7 @@ class TrainingController extends Controller
         return back();
     }
 
-    
+//Get specific data provided id
     public function show($level, $distance, $time)
     {
         return response()->json([
@@ -54,7 +54,8 @@ class TrainingController extends Controller
     }
 
    
-    
+
+//Create new model instance, validate introduced data and perform update given the id   
     public function update(Request $request, $id)
     {
         $data = Training::findOrFail($id);
@@ -70,7 +71,7 @@ class TrainingController extends Controller
         return back();
     }
 
-    
+//Delete specific data   
     public function destroy($id)
     {
         $this->trainingService->delete($id);

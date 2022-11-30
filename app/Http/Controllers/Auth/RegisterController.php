@@ -41,12 +41,7 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
+     //Validates data from registration form
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -54,16 +49,11 @@ class RegisterController extends Controller
             'email'     => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password'  => ['required', 'string', 'min:8', 'confirmed'],
             'phone'     => ['required', 'string', 'min:9'],
-            'role_id'   => ['required', 'string', 'min:1'],
+            //'type'      => ['required', 'string', 'min:1'],
         ]);
     }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
+  //Creates a new instance of user with provided data
     protected function create(array $data)
     {
         return User::create([
@@ -71,7 +61,7 @@ class RegisterController extends Controller
             'email'     => $data['email'],
             'password'  => Hash::make($data['password']),
             'phone'     => $data['phone'],
-            'role_id'   => $data['role_id']
+            //'type'      => $data['type']
         ]);
     }
 }

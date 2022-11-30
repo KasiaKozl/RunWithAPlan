@@ -35,10 +35,10 @@ class UserController extends Controller
         $email = $data['email'];
         $password = $data['password'];
         $phone =$data['phone'];
-        $roleId = $data['role_id'];
+        $type = $data['type'];
         $planningId =$data['planning_id'];
 
-        $result = $this->userService->store($name,$email, $password,$phone,$roleId,$planningId);
+        $result = $this->userService->store($name,$email, $password,$phone,$type,$planningId);
         
         session()->flash('status', 'Created successfully!');
         return back();
@@ -60,11 +60,11 @@ class UserController extends Controller
         $email = $data['email'];
         $password = $data['password'];
         $phone =$data['phone'];
-        $roleId = $data['role_id'];
+        $type = $data['type'];
         $planningId =$data['planning_id'];
 
 
-        $this->userService->update($id, $name, $email, $password,$phone,$roleId,$planningId);
+        $this->userService->update($id, $name, $email, $password,$phone,$type,$planningId);
        
         session()->flash('status', 'Updated successfully!');
         return back();
