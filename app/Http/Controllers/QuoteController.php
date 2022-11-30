@@ -64,7 +64,5 @@ class QuoteController extends Controller
 
         session()->flash('status', 'Deleted successfully!');
         return back();
-    }
-
-   
+    } 
 }

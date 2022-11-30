@@ -30,9 +30,9 @@ class FormController extends Controller
         $data = $request->validated();
 
         $name = $data['name'];
-        $userId= $data['user_id'];
-        $level= $data['level'];
-        $time=$data['time'];
+        $userId = $data['user_id'];
+        $level = $data['level'];
+        $time =$data['time'];
         $distance=$data['distance'];
 
         $result = $this->formService->store($name, $userId, $level, $time, $distance);
@@ -74,6 +74,4 @@ class FormController extends Controller
         session()->flash('status', 'Deleted successfully!');
         return back();
     }
-
-   
 }

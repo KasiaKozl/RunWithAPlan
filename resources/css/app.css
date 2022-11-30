@@ -1,0 +1,21 @@
+
+.navbar-brand{
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: white;
+}
+.nav-link{
+    color:white;
+    font-weight: 400;
+    text-decoration: underline;
+}
+
+nav {
+    background-color: #933225;;
+}
+.navbar-dropdown:active{
+    color: #933225;;
+}
+ 

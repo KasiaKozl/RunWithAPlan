@@ -21,10 +21,10 @@ class FormFactory extends Factory
 
         return [
             //
-        'user_id'=> fake()->randomElement($users),
-        'level' => fake()->randomElement(['beginner', 'intermediate', 'avanced']),
-        'time' => fake()-> randomElement(['4', '8', '12']),
-        'distance' => fake()-> randomElement(['5', '10'])
+        'user_id'   => fake()->randomElement($users),
+        'level'     => fake()->randomElement(['beginner', 'intermediate', 'avanced']),
+        'time'      => fake()-> randomElement(['4', '8', '12']),
+        'distance'  => fake()-> randomElement(['5', '10'])
         ];
     }
 }

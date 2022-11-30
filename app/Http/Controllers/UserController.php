@@ -77,6 +77,4 @@ class UserController extends Controller
         session()->flash('status', 'Deleted successfully!');
         return back();
     }
-
-   
 }

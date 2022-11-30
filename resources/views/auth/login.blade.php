@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
 <style>
@@ -7,6 +6,7 @@
         background-color: #933225;
         border-color: #a12817;
     }
+
     .btn-primary:hover{
         background-color: #a95445;
         border-color: #a12817;
@@ -46,8 +46,8 @@
         background-size: cover;
         background-repeat: no-repeat;
         }
-
 </style>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

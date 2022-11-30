@@ -20,19 +20,3 @@ use App\Http\Controllers\TrainingController;
 |
 */
 
-//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-  //  return $request->user();
-//});
-
-//otro ejemplo
-//Route::get('/user/{id}', function ($id) {
-  //  return new UserResource(User::findOrFail($id));
-//});
-
-Route::resource('roles', RoleController::class); 
-Route::resource('quotes', QuoteController::class); 
-Route::resource('plannings', PlanningController::class);
-Route::resource('forms', FormController::class); 
-Route::resource('users', UserController::class);  
-//Route::resource('trainings', TrainingController::class);  
-

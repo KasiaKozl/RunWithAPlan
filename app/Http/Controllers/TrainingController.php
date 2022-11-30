@@ -77,5 +77,4 @@ class TrainingController extends Controller
         session()->flash('status', 'Deleted successfully!');
         return back();
     }
-   
 }

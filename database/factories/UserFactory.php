@@ -23,12 +23,12 @@ class UserFactory extends Factory
         $plannings = Planning::all()->pluck('id');
 
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
-            'password' => fake()->password(),
-            'phone' => fake()->phoneNumber(),
-            'role_id' => fake()->randomElement($roles),
-            'planning_id' => fake()->randomElement($plannings)
+            'name'           => fake()->name(),
+            'email'          => fake()->unique()->safeEmail(),
+            'password'       => fake()->password(),
+            'phone'          => fake()->phoneNumber(),
+            'role_id'        => fake()->randomElement($roles),
+            'planning_id'    => fake()->randomElement($plannings)
         ];
     }
 
