@@ -20,7 +20,6 @@ class FormFactory extends Factory
         $users = User::all()->pluck('id');
 
         return [
-            //
         'user_id'   => fake()->randomElement($users),
         'level'     => fake()->randomElement(['beginner', 'intermediate', 'avanced']),
         'time'      => fake()-> randomElement(['4', '8', '12']),

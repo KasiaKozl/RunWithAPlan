@@ -16,6 +16,7 @@ class QuoteController extends Controller
         $this->quoteService = $quoteService;
     }
 
+// CRUD functions
     public function index()
     {
         return response()->json([

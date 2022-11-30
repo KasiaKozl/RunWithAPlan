@@ -17,6 +17,8 @@ class UserController extends Controller
         $this->userService = $userService;
     }
 
+//CRUD functions
+
     public function index()
     {
         return response()->json([
@@ -50,7 +52,6 @@ class UserController extends Controller
         ]);
     }
 
-    
     public function update(UserRequest $request, $id)
     {
         $data = $request->validated();
@@ -69,7 +70,6 @@ class UserController extends Controller
         return back();
     }
 
-    
     public function destroy($id)
     {
         $this->userService->delete($id);

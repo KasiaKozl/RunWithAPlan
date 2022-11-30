@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class isCoach {
 
+
+//Middleware to check specific role and return adequate home view
   public function handle($request, Closure $next) {
     if (auth()->user()->roles){
       foreach(auth()->user()->roles as $role){

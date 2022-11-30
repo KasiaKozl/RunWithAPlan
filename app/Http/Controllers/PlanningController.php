@@ -18,6 +18,7 @@ class PlanningController extends Controller
         $this->planningService = $planningService;
     }
 
+//CRUD functions
     public function index()
     {
         return response()->json([

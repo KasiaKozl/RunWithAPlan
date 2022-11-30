@@ -20,6 +20,7 @@ class TrainingController extends Controller
         $this->trainingService = $trainingService;
     }
 
+//CRUD functions
     public function index()
     {
         return response()->json([

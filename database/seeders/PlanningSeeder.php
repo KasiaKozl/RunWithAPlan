@@ -15,7 +15,6 @@ class PlanningSeeder extends Seeder
      */
     public function run()
     {
-        //
         Planning::factory()->count(15)->create();
     }
 }

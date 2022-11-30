@@ -16,6 +16,7 @@ class RoleController extends Controller
         $this->roleService = $roleService;
     }
 
+//CRUD functions
     public function index()
     {
         return response()->json([

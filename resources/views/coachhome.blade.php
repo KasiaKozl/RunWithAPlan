@@ -53,11 +53,11 @@
                     <div class="card-body text-center">
                     {{ __('globals.message_coach') }}
                     </div>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <!-- Button to trigger modal to upload new training -->
+                    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#newModal">
                     {{ __('globals.upload') }}
                     </button>
-                    <!-- Modal -->
+                    <!-- Modal body -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
@@ -125,14 +125,14 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Fin Modal -->
+                    <!-- End Modal -->
                     
-
+                    <!-- Start Second Modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#indexModal">
                     {{ __('globals.see_all') }}
                     </button>
                     <br>
-                    <!-- Modal -->
+                    <!-- Modal body -->
                     <div class="modal fade" id="indexModal" tabindex="-1" aria-labelledby="indexModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
@@ -183,7 +183,7 @@
                         </div>
                     </div>
 
-                    <!-- Modal -->
+                    <!-- Modal Update-->
                     <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-xl">
                             <div class="modal-content">
